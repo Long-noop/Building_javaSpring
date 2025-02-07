@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Built-By: ADMIN
+Build-Jdk: 21.0.5
+Implementation-Title: springboot-non-jwt
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.javaweb
+Implementation-Vendor: Pivotal Software, Inc.
+Implementation-URL: https://projects.spring.io/spring-boot/springboot-no
+ n-jwt/
+Created-By: Maven Integration for Eclipse
+
