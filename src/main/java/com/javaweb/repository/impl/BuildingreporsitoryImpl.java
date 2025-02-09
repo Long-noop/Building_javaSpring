@@ -15,7 +15,7 @@ import com.javaweb.repository.entity.BuildingEntity;
 
 @Repository
 public class BuildingreporsitoryImpl implements BuildingRepository {
-	static final String url = "jdbc:mysql://localhost:3306/build";
+	private final String url = "jdbc:mysql://localhost:3306/build";
 	static final String username = "root";
 	static final String password = "Long@12345";
 
