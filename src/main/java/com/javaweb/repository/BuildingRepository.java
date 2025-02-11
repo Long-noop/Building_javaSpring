@@ -2,8 +2,9 @@ package com.javaweb.repository;
 
 import java.util.List;
 
+import com.javaweb.builder.BuildingSearchBuilder;
 import com.javaweb.repository.entity.BuildingEntity;
 
 public interface BuildingRepository {
-	List<BuildingEntity> findAll(String name, Integer districtID);
+	List<BuildingEntity> findAll(BuildingSearchBuilder building);
 }

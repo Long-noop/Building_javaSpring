@@ -1,10 +1,146 @@
 package com.javaweb.repository.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "building")
 public class BuildingEntity {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+
+	@Column(name = "name")
 	private String name;
-	private Integer numberOfBasement;
+
+//	@Column(name = "numberofbasement")
+//	private Integer numberOfBasement;
+
+	@Column(name = "ward")
 	private String ward;
+
+	@Column(name = "street")
 	private String street;
+
+//	@Column(name = "createddate")
+//	private String createdDate;
+//
+//	@Column(name = "managername")
+//	private String managerName;
+//
+//	@Column(name = "managerphonenumber")
+//	private String managerPhoneNumber;
+//
+//	@Column(name = "floorarea")
+//	private Long floorArea;
+//
+//	@Column(name = "rentprice")
+//	private Long rentPrice;
+//
+//	@Column(name = "servicefee")
+//	private String serviceFee;
+//
+//	@Column(name = "brokeragefee")
+//	private Long brokerageFee;
+
+	@ManyToOne
+	@JoinColumn(name = "districtid")
+	private DistrictEntity district;
+
+	@OneToMany(mappedBy = "building", fetch = FetchType.LAZY)
+	private List<RentAreaEntity> items = new ArrayList<>();
+
+	public List<RentAreaEntity> getItems() {
+		return items;
+	}
+
+	public void setItems(List<RentAreaEntity> items) {
+		this.items = items;
+	}
+
+	public DistrictEntity getDistrict() {
+		return district;
+	}
+
+	public void setDistrict(DistrictEntity district) {
+		this.district = district;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+//	public String getCreatedDate() {
+//		return createdDate;
+//	}
+//
+//	public void setCreatedDate(String createdDate) {
+//		this.createdDate = createdDate;
+//	}
+//
+//	public String getManagerName() {
+//		return managerName;
+//	}
+//
+//	public void setManagerName(String managerName) {
+//		this.managerName = managerName;
+//	}
+//
+//	public String getManagerPhoneNumber() {
+//		return managerPhoneNumber;
+//	}
+//
+//	public void setManagerPhoneNumber(String managerPhoneNumber) {
+//		this.managerPhoneNumber = managerPhoneNumber;
+//	}
+//
+//	public Long getFloorArea() {
+//		return floorArea;
+//	}
+//
+//	public void setFloorArea(Long floorArea) {
+//		this.floorArea = floorArea;
+//	}
+//
+//	public Long getRentPrice() {
+//		return rentPrice;
+//	}
+//
+//	public void setRentPrice(Long rentPrice) {
+//		this.rentPrice = rentPrice;
+//	}
+//
+//	public String getServiceFee() {
+//		return serviceFee;
+//	}
+//
+//	public void setServiceFee(String serviceFee) {
+//		this.serviceFee = serviceFee;
+//	}
+//
+//	public Long getBrokerageFee() {
+//		return brokerageFee;
+//	}
+//
+//	public void setBrokerageFee(Long brokerageFee) {
+//		this.brokerageFee = brokerageFee;
+//	}
 
 	public String getName() {
 		return name;
@@ -14,13 +150,13 @@ public class BuildingEntity {
 		this.name = name;
 	}
 
-	public Integer getNumberOfBasement() {
-		return numberOfBasement;
-	}
-
-	public void setNumberOfBasement(Integer numberOfBasement) {
-		this.numberOfBasement = numberOfBasement;
-	}
+//	public Integer getNumberOfBasement() {
+//		return numberOfBasement;
+//	}
+//
+//	public void setNumberOfBasement(Integer numberOfBasement) {
+//		this.numberOfBasement = numberOfBasement;
+//	}
 
 	public String getWard() {
 		return ward;
